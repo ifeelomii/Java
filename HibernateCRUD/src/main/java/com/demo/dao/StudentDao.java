@@ -114,7 +114,7 @@ public class StudentDao implements IStudentDao {
 	public List<Student> SortStudentByMarksDao() {
 		Session session = sf.openSession();
 		Transaction tr = session.beginTransaction();
-		Query query = session.createQuery("from std_tbl std order by std.std_marks select desc");
+		Query query = session.createQuery("from std_tbl s order by s.stdmarks desc");
 		List<Student> list = query.getResultList();
 		tr.commit();
 		session.close();
